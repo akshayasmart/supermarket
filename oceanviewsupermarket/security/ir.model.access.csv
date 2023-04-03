@@ -1,0 +1,7 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+
+access_accounting_accounting,access_accounting_accounting,model_accounting_accounting,,1,1,1,1
+access_consumer_consumer,access_consumer_consumer,model_consumer_consumer,,1,1,1,1
+access_goods_goods,access_goods_goods,model_goods_goods,,1,1,1,1
+access_worker_worker,access_worker_worker,model_worker_worker,,1,1,1,1
+
