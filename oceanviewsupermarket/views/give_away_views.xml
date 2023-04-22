@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Form View-->
+        <record id="view_give_give_form" model="ir.ui.view">
+            <field name="name">give.give.form</field>
+            <field name="model">give.give</field>
+            <field name="arch" type="xml">
+                <form string="GiveAway">
+                    <header>
+                        <field name="status_bar" widget="statusbar" options="{'clickable': '1'}"/>
+                    </header>
+                    <sheet>
+                        <field name="image" widget="image" class="oe_avatar"/>
+                        <group>
+                                <field name="name"/>
+                                <field name="specialty_list"/>
+                                <field name="giveaway_status"/>
+                                <field name='deal'/>
+
+                        </group>
+                        <notebook>
+                            <page string="Give away">
+                                <group>
+                                <field name="product_ids">
+                                    <tree editable="bottom">
+                                        <field name="goods_id"/>
+                                        <field name="discount_id"/>
+                                    </tree>
+
+
+                                </field>
+                                </group>
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!--Tree Views-->
+        <record id="view_give_give_tree" model="ir.ui.view">
+            <field name="name">give.give.tree</field>
+            <field name="model">give.give</field>
+            <field name="arch" type="xml">
+                <tree string="GiveAway">
+                    <field name="name"/>
+                    <field name="specialty_list"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Action -->
+        <record id="action_give_give" model="ir.actions.act_window">
+            <field name="name">GiveAway</field>
+            <field name="res_model">give.give</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--Menus-->
+        <menuitem id="giveaway_menu" name="GiveAway" sequence="2" action="action_give_give"
+                  parent="ocean_views_supermarket_menu"/>
+
+
+    </data>
+</odoo>

@@ -1,7 +1,16 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-
-access_accounting_accounting,access_accounting_accounting,model_accounting_accounting,,1,1,1,1
-access_consumer_consumer,access_consumer_consumer,model_consumer_consumer,,1,1,1,1
+access_consumer_consumer_employee,access_consumer_consumer_employee,model_consumer_consumer,group_market_employee,1,0,0,0
+access_consumer_consumer_mananger,access_consumer_consumer_manager,model_consumer_consumer,group_market_manager,1,1,1,1
+,,,,,,,
 access_goods_goods,access_goods_goods,model_goods_goods,,1,1,1,1
 access_worker_worker,access_worker_worker,model_worker_worker,,1,1,1,1
+access_goods_details,access_goods_details,model_goods_details,,1,1,1,1
+access_accounting_accounting,access_accounting_accounting,model_accounting_accounting,,1,1,1,1
+access_give_give,access_give_give,model_give_give,,1,1,1,1
+access_give_details,access_give_details,model_give_details,,1,1,1,1
+
+access_payment_payment,access_payment_payment,model_payment_payment,,1,1,1,1
+access_payment_details,access_payment_details,model_payment_details,,1,1,1,1
+
+
 

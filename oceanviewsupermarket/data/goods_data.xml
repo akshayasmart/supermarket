@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="goods_data_Apple" model="goods.goods">
+            <field name="name">Apple</field>
+        </record>
+        <record id="goods_data_Orange" model="goods.goods">
+            <field name="name">Orange</field>
+        </record>
+        <record id="medicine_data_Banana" model="goods.goods">
+            <field name="name">Banana</field>
+        </record>
+    </data>
+</odoo>

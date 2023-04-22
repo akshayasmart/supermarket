@@ -2,6 +2,18 @@
 <odoo>
     <data>
 
+        <record id="action_server_module_immediate_install" model="ir.actions.server">
+            <field name="name">Mark as Done</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_accounting_accounting"/>
+            <field name="binding_model_id" ref="model_accounting_accounting"/>
+            <field name="state">code</field>
+            <field name="code">
+                for record in record:
+                    if record.name == 'in_consultation':
+                       record.action_done()
+            </field>
+        </record>
         <!-- Form View-->
         <record id="view_accounting_accounting_form" model="ir.ui.view">
             <field name="name">accounting.accounting.form</field>
@@ -12,23 +24,28 @@
                         <field name="image" widget="image" class="oe_avatar"/>
                         <group>
                             <group>
-                                <field name="name"/>
+                                <field name="name" attrs="{'readonly': [('name', '=', True)]}"/>
                                 <field name="opening_balance"/>
                                 <field name="phone_number"/>
                             </group>
                             <group>
-                                <field name="account_number"/>
+                                <field name="account_number" groups = "oceanviewsupermarket.group_market_manager"/>
                                 <field name="ifsc_code"/>
                                 <field name="profits"/>
                                 <field name="bank_name"/>
                             </group>
                         </group>
                     </sheet>
+                   <div class="oe_chatter">
+                        <field name="message_ids" widget="mail_thread"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                    </div>
                 </form>
             </field>
         </record>
 
-              <record id="view_accounting_kanban" model="ir.ui.view">
+
+        <record id="view_accounting_kanban" model="ir.ui.view">
             <field name="name">accounting.kanban</field>
             <field name="model">accounting.accounting</field>
             <field name="arch" type="xml">
@@ -107,14 +124,26 @@
                 </tree>
             </field>
         </record>
+
+        <!--graph Views-->
+         <record id="view_accounting_accounting_tree_graph" model="ir.ui.view">
+            <field name="name">accounting.accounting.graph</field>
+            <field name="model">accounting.accounting</field>
+            <field name="arch" type="xml">
+                <graph string="Report Analysis" sample="1">
+                    <field name="profits"/>
+                    <field name="start_date" interval="month"/>
+                </graph>
+            </field>
+        </record>
+
         <!-- Action -->
         <record id="action_accounting_accounting" model="ir.actions.act_window">
             <field name="name">Account</field>
             <field name="res_model">accounting.accounting</field>
-            <field name="view_mode">tree,kanban,calendar,form</field>
+            <field name="view_mode">tree,kanban,calendar,form,activity,graph</field>
         </record>
         <!--Menus-->
-        <menuitem id="ocean_views_supermarket_menu" name="Ocean Views Supermarket" sequence="1"/>
         <menuitem id="account_menu" name="Account" sequence="2" action="action_accounting_accounting"
                   parent="ocean_views_supermarket_menu"/>
 
