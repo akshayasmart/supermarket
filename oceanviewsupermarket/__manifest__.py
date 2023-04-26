@@ -15,7 +15,10 @@
         'views/accounting_views.xml',
         'views/workersmanagement.xml',
         'views/payment.xml',
-        'views/purchase.xml'
+        'views/purchase.xml',
+        'views/ocean_report.xml',
+        'views/goods_report.xml',
+
     ],
     'installable': True,
     'application': True,
