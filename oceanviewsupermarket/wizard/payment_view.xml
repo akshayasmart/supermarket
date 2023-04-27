@@ -7,24 +7,14 @@
         <field name="arch" type="xml">
             <form string="Register Payment">
                 <group>
-                    <field name="consumer_no"/>
-                    <field name="amount"/>
+                    <field name="worker_ids" widget="many2many_tags"/>
+                  <!--  <field name="consumer_no"/>
+                    <field name="amount"/>-->
                 </group>
 
-<!--                <group>-->
-<!--                    <field name="goods_ids"/>-->
-<!--                </group>-->
-
-                <!--<group>
-                    <field name="pay_ids">
-                        <tree ebitable="bottom">
-                            <field name="goods_id"/>
-                            <field name="consumer_id"/>
-                        </tree>
-                    </field>
-                </group>
--->
                 <footer>
+                    <button string="Print" name="print_worker" type="object" class="oe_highlight"/>
+
                     <button string="Create Payment" name="create_payments" type="object" class="oe_highlight"
                             data-hotkey="q"/>
                     <button string="Cancel" class="btn btn-secondary" special="cancel" data-hotkey="z"/>

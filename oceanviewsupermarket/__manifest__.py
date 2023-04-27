@@ -8,6 +8,7 @@
         'security/security.xml',
         'security/ir.model.access.csv',
         'data/goods_data.xml',
+        'report/report_worker.xml',
         'wizard/payment_view.xml',
         'views/goodsmanagement_views.xml',
         'views/consumermanagement_views.xml',

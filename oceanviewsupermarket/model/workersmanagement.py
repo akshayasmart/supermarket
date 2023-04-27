@@ -19,6 +19,7 @@ class WorkersManagement(models.Model):
     image = fields.Image(string='Images')
     date_of_birth = fields.Date(string='DOB')
     age = fields.Integer(string='Age')
+    notes = fields.Text(string='Notes')
     designation = fields.Selection([
         ('storemanager','Store Manager'),
         ('assistantmanager','Assistant Manager'),

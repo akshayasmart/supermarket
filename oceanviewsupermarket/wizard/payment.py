@@ -9,8 +9,17 @@ class PaymentWizard(models.TransientModel):
     consumer_no = fields.Char('Consumer No')
     amount = fields.Float(string='Amount')
     goods_ids = fields.Many2many('goods.goods', string='Goods')
+    worker_ids = fields.Many2many('worker.worker', string='Workers')
     price = fields.Integer(string='Price')
     # pay_ids = fields.One2many('pay.pay', 'payment_id' ,string='Payment')
+
+
+    def print_worker(self):
+        data = {
+            'worker_ids': self.worker_ids.ids,
+        }
+        # data['form'].update({'worker_ids': self.worker_ids})
+        return self.env.ref('oceanviewsupermarket.action_report_worker').report_action(self, data=data)
 
 
     def create_payments(self):
