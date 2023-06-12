@@ -4,6 +4,10 @@ from odoo import models, fields, api
 class ConsumerManagement(models.Model):
     _name = 'consumer.consumer'
 
+    def _reminder_mail(self):
+        reminder = self.env['consumer.consumer'].search([('start_date', '=', fields.Date.today())]).write({'active': False})
+        print("one year completed",reminder)
+
     @api.model
     def _get_default_user(self):
         return self.env.context.get('user_id', self.env.user.id)
@@ -30,6 +34,8 @@ class ConsumerManagement(models.Model):
         ('vegetables', 'Vegetables')],
         'Category'
     )
+    start_date = fields.Date(string="Start Date")
+    active = fields.Boolean('Active',default=True)
 
     # offer = fields.Selection([('10% off', '10% Off'),
     #                          ('20% off', '20% Off'),

@@ -107,7 +107,7 @@
         </record>
 
         <!--Search-->
-        <record id="view_goddsmanagement_search" model="ir.ui.view">
+        <record id="view_goods_management_search" model="ir.ui.view">
             <field name="name">goods.goods.search</field>
             <field name="model">goods.goods</field>
             <field name="arch" type="xml">

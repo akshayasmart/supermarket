@@ -33,6 +33,9 @@
                                 <field name="ifsc_code"/>
                                 <field name="profits"/>
                                 <field name="bank_name"/>
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+
                             </group>
                         </group>
                     </sheet>
@@ -43,7 +46,6 @@
                 </form>
             </field>
         </record>
-
 
         <record id="view_accounting_kanban" model="ir.ui.view">
             <field name="name">accounting.kanban</field>
@@ -146,6 +148,13 @@
         <!--Menus-->
         <menuitem id="account_menu" name="Account" sequence="2" action="action_accounting_accounting"
                   parent="ocean_views_supermarket_menu"/>
+
+           <menuitem id="reporting_menu" name="Reporting" sequence="4"
+                  parent="ocean_views_supermarket_menu"/>
+
+        <menuitem id="accounting_reporting_menu" name="Accounting" sequence="1" action="action_payment_wizard"
+                  parent="reporting_menu"/>
+
 
 
     </data>

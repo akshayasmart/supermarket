@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_account">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <style>
+                            table, td, th {
+                            border: 1px solid;
+                            }
+                            .size {
+                            height: 5px;
+                            }
+                            td{
+                            height:20px;
+                            }
+                            th{
+                            text-align:center
+                            }
+                            .row{
+                            height: 100px;
+                            width: 600px;
+                            margin-left: 0px;
+                            }
+
+                        </style>
+                        <table style="width:100%">
+                            <tr>
+                                <th rowspan="4">
+                                    <img src="logo.png" width="350px" height="85px" style="padding-left:100px; padding-top:20px;"/>
+                                </th>
+                                <th style="background-color: #f0f2f2; text-align:center;" colspan="3">Document.No</th>
+                            </tr>
+
+                            <tr>
+                                <td style="text-align:center;" colspan="3">EST-FR-30</td>
+                            </tr>
+                            <tr style="background-color: #f0f2f2; text-align:center;">
+                                <th>Rev.No</th>
+                                <th>Date</th>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td > </td>
+                                <td> 03-08-2023 </td>
+                            </tr>
+                        </table>
+                        <table style="width:100%">
+                            <thead>
+                                <tr>
+                                    <td style="background-color: #f0f2f2" colspan="9">
+                                        <p style="text-align:center; padding-top:10px;">
+                                            <strong>
+                                                PURCHASE REQUISITION
+                                            </strong>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr style="background-color: #f0f2f2">
+                                    <th width="13%;" style="background-color: #f0f2f2; text-align:center;">Division</th>
+                                    <th width="25%;" style="background-color: #f0f2f2; text-align:center;">PR No</th>
+                                    <th width="10%;" style="background-color: #f0f2f2; text-align:center;">Dept.<br/> Code</th>
+                                    <th width="25%;" style="background-color: #f0f2f2; text-align:center;">Project Code</th>
+                                    <th width="5%;" style="background-color: #f0f2f2; text-align:center;">  </th>
+                                    <th width="5%;" style="background-color: #f0f2f2; text-align:center;">Rev.</th>
+                                    <th width="25%;" style="background-color: #f0f2f2; text-align:center;">Date</th>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td> </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td> </td>
+                                    <td> </td>
+
+                                </tr>
+                            </thead>
+                            </table>
+                        <table style="width:100%">
+                                <tr>
+                                    <td colspan="9" rowspan="1" class="size">
+                                        <p style="font-size:10px; text-align:center;padding-top:10px;">NOTE : NO CELLS IN THIS DOCUMENT
+                                            SHALL BE LEFT BLANK; WHICH EVER NOT APPLICABLE PLEASE PUT "N/A".
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #f0f2f2" colspan="4"> Project Name</td>
+                                    <td colspan="5">  </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #f0f2f2" colspan="4">Reason for Purchase </td>
+                                    <td colspan="5">  </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #f0f2f2" colspan="4">Point of delivery / Destination</td>
+                                    <td colspan="5">  </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #f0f2f2" colspan="4">Customer PO no. / Date if applicable</td>
+                                    <td colspan="5"> </td>
+                                </tr>
+                                <tr>
+                                    <th width="5%" style="background-color: #f0f2f2; text-align:center;">SI No</th>
+                                    <th style="background-color: #f0f2f2; text-align:center;">Material Code</th>
+                                    <th style="background-color: #f0f2f2; text-align:center;">Item description</th>
+                                    <th style="background-color: #f0f2f2; text-align:center;">Required Qty</th>
+                                    <th style="background-color: #f0f2f2; text-align:center;">UOM</th>
+                                    <th style="background-color: #f0f2f2; text-align:center;">Budget Value</th>
+                                    <th style="background-color: #f0f2f2; text-align:center;" colspan="3">Stock (For use by Proc. Rep.)</th>
+                                </tr>
+
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td colspan="5"> </td>
+                                </tr>
+                                <tr>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td colspan="5"> </td>
+                                </tr>
+                                <tr>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td colspan="3"> </td>
+                                </tr>
+                        </table>
+                        <table>
+                                <tr>
+                                    <td style="background-color: #f0f2f2" colspan="4">Remarks / Additional Information if any </td>
+                                    <td colspan="5"> </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #f0f2f2" colspan="4">Please specify Storage instructions - If applicable </td>
+                                    <td colspan="5">  </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #f0f2f2" colspan="4">Specify Inspection and MTC required.</td>
+                                    <td colspan="5">  </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #f0f2f2" colspan="4">Recommended Suppliers / Make if any</td>
+                                    <td colspan="5">  </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #f0f2f2" colspan="4"> Attachments  (Please specify)</td>
+                                    <td colspan="5"> </td>
+                                </tr>
+
+                                <tr>
+                                    <th width="3%"> </th>
+                                    <th width="1%">Y</th>
+                                    <th width="1%">N</th>
+                                    <th width="1%">N/A</th>
+                                    <th width="3%" colspan="2"> </th>
+                                    <th width="1%">Y</th>
+                                    <th width="1%">N</th>
+                                    <th width="1%">N/A</th>
+                                </tr>
+
+                                <tr>
+                                    <td style="font-size:12px;">(a) Technical Specifications</td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td style="font-size:12px;" colspan="2">(e) Customer PO Un priced </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size:12px;">(b) drawings</td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td style="font-size:12px;" colspan="2">(d) Quotations from vendor if any </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size:12px;">(c) Vendor List if applicable</td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td style="font-size:12px;" colspan="2">(f) Others please specify</td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                </tr>
+
+                                <tr width="1200px">
+                                        <td style="font-size:12px; font-weight:bold; text-align:center;padding-top:10px;" colspan="2"
+                                            width="400px">Requested by &amp;
+                                            <br>
+                                                Site representative (Name &amp; Sign)
+                                            </br>
+                                        </td>
+                                        <td style="font-size:12px; font-weight:bold; text-align:center;padding-top:50px;" colspan="3"
+                                            width="400px">Reviewed By Purchase
+                                            <br>
+                                                representative ( Name &amp; Sign )
+                                            </br>
+                                        </td>
+                                        <td style="font-size:12px; font-weight:bold; text-align:center;padding-top:10px;" colspan="5"
+                                            width="400px">Approved by
+                                            <br>
+                                                Operation Manager (Name &amp; Sign)
+                                            </br>
+                                        </td>
+                                </tr>
+                        </table>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

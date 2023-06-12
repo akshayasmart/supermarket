@@ -22,6 +22,16 @@
             <field name="binding_type">report</field>
         </record>
 
+         <record id="action_report_accounting" model="ir.actions.report">
+            <field name="name">Accounting</field>
+            <field name="model">accounting.accounting</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">oceanviewsupermarket.report_account</field>
+            <field name="report_file">oceanviewsupermarket.report_account</field>
+            <field name="binding_model_id" ref="model_accounting_accounting"/>
+            <field name="binding_type">report</field>
+        </record>
+
     </data>
 </odoo>
 

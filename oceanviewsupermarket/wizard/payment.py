@@ -11,8 +11,24 @@ class PaymentWizard(models.TransientModel):
     goods_ids = fields.Many2many('goods.goods', string='Goods')
     worker_ids = fields.Many2many('worker.worker', string='Workers')
     price = fields.Integer(string='Price')
+    accounting_ids = fields.Many2many('accounting.accounting',string='Accounting')
+    bank_name = fields.Char(string='Bank Name')
     # pay_ids = fields.One2many('pay.pay', 'payment_id' ,string='Payment')
+    start_date = fields.Date(string='Start Date')
+    end_date = fields.Date(string='End Date')
 
+
+
+    def print_report(self):
+        data = {
+            'accounting_ids': self.accounting_ids.ids,
+            'bank_name': self.bank_name,
+            'start_date': self.start_date,
+            'end_date':self.end_date,
+
+        }
+        print('>>>>>>>>>>',data)
+        return self.env.ref('oceanviewsupermarket.action_report_accounting').report_action(self, data=data)
 
     def print_worker(self):
         data = {

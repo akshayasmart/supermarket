@@ -26,7 +26,7 @@
                                 <field name="last_name"/>
                                 <field name="name"/>
                                 <field name="user_id"/>
-                                <field name="consumer_no" />
+                                <field name="consumer_no"/>
                                 <field name="list_of_goods" widget="many2many_tags"/>
                             </group>
                             <group>
@@ -34,21 +34,21 @@
                                 <field name="consumer_email"/>
                                 <field name="goods_ids"/>
                                 <field name="goods_category"/>
-<!--                                <field name="offer"/>-->
+                                <field name="start_date"/>
 
                             </group>
                         </group>
                         <notebook>
                             <page string='FeedBack'>
                                 <group>
-                                <field name="feedback"/>
+                                    <field name="feedback"/>
                                 </group>
                             </page>
 
                         </notebook>
-<!--                        <footer>-->
-<!--                            <button name="feedback" special="save" data-hotkey="z" string="Submit" class="oe_highlight"/>-->
-<!--                        </footer>-->
+                        <!--                        <footer>-->
+                        <!--                            <button name="feedback" special="save" data-hotkey="z" string="Submit" class="oe_highlight"/>-->
+                        <!--                        </footer>-->
                     </sheet>
                 </form>
             </field>
@@ -134,7 +134,8 @@
         </record>
 
         <!--Menus-->
-        <menuitem id="consumer_menu" name="Consumer" sequence="2" action="action_consumer_consumer" groups = "oceanviewsupermarket.group_market_manager"
+        <menuitem id="consumer_menu" name="Consumer" sequence="2" action="action_consumer_consumer"
+                  groups="oceanviewsupermarket.group_market_manager"
                   parent="ocean_views_supermarket_menu"/>
 
 

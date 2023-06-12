@@ -3,6 +3,7 @@ from odoo import _,models, fields,api
 
 class Accounting(models.Model):
     _name = 'accounting.accounting'
+
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string='Account Name')
@@ -12,7 +13,8 @@ class Accounting(models.Model):
     opening_balance = fields.Integer(string='Opening Balance')
     profits = fields.Integer(string='Profits')
     image = fields.Image(string='Images')
-    start_date = fields.Datetime(string="Start Date")
+    start_date = fields.Date(string="Start Date")
+    end_date = fields.Date(string="End Date")
     bank_name = fields.Char(string='Bank Name')
 
     @api.returns('self', lambda value: value.id)

@@ -7,13 +7,20 @@
         <field name="arch" type="xml">
             <form string="Register Payment">
                 <group>
-                    <field name="worker_ids" widget="many2many_tags"/>
+<!--                    <field name="worker_ids" widget="many2many_tags"/>-->
+                    <field name="bank_name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="accounting_ids" widget="many2many_tags"/>
+
                   <!--  <field name="consumer_no"/>
                     <field name="amount"/>-->
                 </group>
 
                 <footer>
-                    <button string="Print" name="print_worker" type="object" class="oe_highlight"/>
+<!--                    <button string="Print" name="print_worker" type="object" class="oe_highlight"/>-->
+                    <button string="Report" name="print_report" type="object" class="oe_highlight"/>
+
 
                     <button string="Create Payment" name="create_payments" type="object" class="oe_highlight"
                             data-hotkey="q"/>
